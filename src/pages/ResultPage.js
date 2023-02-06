@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import { getBestTeam } from '../utils/knapsack';
-import { players } from '../utils/players';
 
 const ResultPage = (props) => {
-  const { setMode } = props;
+  const { setMode, budget, players } = props;
   const [bestTeam, setBestTeam] = useState(null);
 
   const handleReturnBtn = () => setMode('initial');
 
   useEffect(() => {
-    const result = getBestTeam(players, 11);
+    const playersList = players.filter(player => player.selected);
+    console.log(playersList)
+    const result = getBestTeam(playersList, Number(budget));
     setBestTeam(result);
-    console.log(result);
   }, [])
 
   const renderBestTeam = bestTeam?.map((p, index) => <p key={`player-${index}`}>{p}</p>);

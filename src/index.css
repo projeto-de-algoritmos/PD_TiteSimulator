@@ -34,6 +34,24 @@ p {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.actions-section {
+  display: flex;
+  justify-content: space-between;
+}
+
 .table {
   background-color: white;
+}
+
+.sort-icon {
+  height: 8px;
+  margin-left: 4px;
+}
+
+.icon-off {
+  display: none;
+}
+
+.icon-desc {
+  transform: rotate(180deg);
 }

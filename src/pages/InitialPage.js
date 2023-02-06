@@ -1,8 +1,7 @@
 import PlayersTable from '../components/PlayersTable';
-import { players } from '../utils/players';
 
 const InitialPage = (props) => {
-  const { setMode } = props;
+  const { setMode, budget, setBudget, players, setPlayers } = props;
 
   const handleResultBtn = () => setMode('result');
 
@@ -11,14 +10,22 @@ const InitialPage = (props) => {
       <div className='container'>
         <section className="text-center">
           <h1>Tite Simulator</h1>
-          <p>Depois de vergonhosamente perder a copa do mundo para a Croácia, Tite está viciado em jogar FIFA e precisa da sua ajuda pra montar o time mais forte possível com o valor que for definido.</p>
-          <p>A lista conta com apenas jogadores brasileiros, pois o Tite ainda não superou a derrota, mas você tem o poder de barrar certos jogadores para que o Tite não se lembre do desempenho deles na copa.</p>
+          <p>Depois de vergonhosamente perder a copa do mundo para a Croácia, Tite está viciado em jogar FIFA e precisa da sua ajuda para reforçar ao máximo seu time virtual com as moedas que ele tem.</p>
+          <p>Contando com apenas jogadores brasileiros, você pode escolher quais jogadores não serão nem cogitados no time virtual do Tite. Basta desmarcá-los na primeira coluna da tabela.</p>
         </section>
-        <section className='button-list'>
-          <button type="button" className="btn btn-primary" onClick={handleResultBtn}>Ver resultado</button>
+        <section className='actions-section'>
+          <div className="form-group row">
+            <label className="col-sm-6 col-form-label">Valor máximo do time:</label>
+            <div className="col-sm-6">
+              <input className="form-control" type='number' value={budget} onChange={e => setBudget(e.target.value)} />
+            </div>
+          </div>
+          <div className="form-group row">
+            <button type="button" className="btn btn-primary" onClick={handleResultBtn}>Ver resultado</button>
+          </div>
         </section>
         <section>
-          <PlayersTable players={players} />
+          <PlayersTable players={players} setPlayers={setPlayers} />
         </section>
       </div>
     </div>
