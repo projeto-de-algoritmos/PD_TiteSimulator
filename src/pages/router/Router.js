@@ -1,17 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { players } from "../../assets/players";
 import InitialPage from "../InitialPage";
 import ResultPage from "../ResultPage";
 
+
 const Router = () => {
   const [mode, setMode] = useState('initial');
   const [budget, setBudget] = useState('');
-  const [playersList, setPlayersList] = useState(null);
 
-  useEffect(() => {
-    const initPlayersList = players.map(player => ({ ...player, selected: true }));
-    setPlayersList(initPlayersList);
-  }, []);
+  const initPlayersList = players.map(player => ({ ...player, selected: true }));
+  const [playersList, setPlayersList] = useState(initPlayersList);
 
   return mode === 'initial' ?
     <InitialPage setMode={setMode} budget={budget} setBudget={setBudget} players={playersList} setPlayers={setPlayersList} /> :

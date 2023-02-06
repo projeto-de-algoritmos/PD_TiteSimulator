@@ -4,6 +4,7 @@ const InitialPage = (props) => {
   const { setMode, budget, setBudget, players, setPlayers } = props;
 
   const handleResultBtn = () => setMode('result');
+  const isResultBtnDisabled = budget > 0 ? false : true;
 
   return (
     <div className="home">
@@ -17,11 +18,11 @@ const InitialPage = (props) => {
           <div className="form-group row">
             <label className="col-sm-6 col-form-label">Valor máximo do time:</label>
             <div className="col-sm-6">
-              <input className="form-control" type='number' value={budget} onChange={e => setBudget(e.target.value)} />
+              <input className="form-control" type='number' min='0' value={budget} onChange={e => setBudget(e.target.value)} />
             </div>
           </div>
           <div className="form-group row">
-            <button type="button" className="btn btn-primary" onClick={handleResultBtn}>Ver resultado</button>
+            <button type="button" className="btn btn-primary" disabled={isResultBtnDisabled} onClick={handleResultBtn}>Ver resultado</button>
           </div>
         </section>
         <section>

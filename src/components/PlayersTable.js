@@ -4,8 +4,8 @@ import { BsFillCaretDownFill } from "react-icons/bs";
 const PlayersTable = (props) => {
   const { players, setPlayers } = props;
   const [headerCheckbox, setHeaderCheckbox] = useState(true);
-  const [selectedColumn, setSelectedColumn] = useState('value');
-  const [sortOrder, setSortOrder] = useState('asc');
+  const [selectedColumn, setSelectedColumn] = useState('overall');
+  const [sortOrder, setSortOrder] = useState('desc');
 
   const columns = [
     { key: "name", label: "Nome" },
@@ -15,10 +15,21 @@ const PlayersTable = (props) => {
 
   // sorting
 
-  useEffect(() => {
-    // TODO
-    // setPlayers(newList);
-  }, [selectedColumn, sortOrder]);
+  const sortList = (column, order) => {
+    const newList = [...players];
+    selectedColumn === 'name'
+      ? newList.sort((a, b) => {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        return 0;
+      })
+      : newList.sort((a, b) => a[column] - b[column]);
+    order === "desc" && newList.reverse();
+
+    setPlayers(newList);
+  }
+
+  useEffect(() => sortList(selectedColumn, sortOrder), [selectedColumn, sortOrder]);
 
   const getIconClassName = (column) => column === selectedColumn ? `icon-${sortOrder}` : `icon-off`;
 
