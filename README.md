@@ -10,7 +10,7 @@
 | 150011903 | [Igor Aragão](https://github.com/roginaldosemog)            |
 
 ## Sobre 
-O objetivo do projeto é
+O objetivo do projeto é utilizar a Programação Dinâmica para resolver o problema do nosso ex técnico e professor da seleção, Tite.
 
 ## Screenshots
 
