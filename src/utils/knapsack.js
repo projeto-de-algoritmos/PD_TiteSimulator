@@ -39,6 +39,5 @@ export const getBestTeam = (players, budget) => {
     n--;
   }
 
-  // Retorna o maior valor de habilidade possível
   return selectedPlayers;
 } 

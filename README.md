@@ -10,9 +10,21 @@
 | 150011903 | [Igor Aragão](https://github.com/roginaldosemog)            |
 
 ## Sobre 
-O objetivo do projeto é utilizar a Programação Dinâmica para resolver o problema do nosso ex técnico e professor da seleção, Tite.
+O objetivo do projeto é utilizar o algoritmo knapsack (mochila) para ajudar nosso ex-técnico e professor da seleção brasileira, Tite, a comprar jogadores no FIFA tendo o maior aproveitamento dessas moedas, obtendo o máximo de reforços possíveis com a quantia disponível.
 
 ## Screenshots
+<p align="center">
+  <img src="assets/screenshot1.png">
+</p>
+<p align="center">
+  <img src="assets/screenshot2.png">
+</p>
+<p align="center">
+  <img src="assets/screenshot3.png">
+</p>
+
+## Apresentação
+O vídeo para apresentação se encontra disponível para baixar [AQUI](assets/presentation.mp4)
 
 ## Instalação 
 **Linguagem**: Javascript<br>
@@ -24,6 +36,6 @@ Após a instalação, rode os comandos `yarn install` e em seguida `yarn start`.
 
 ## Uso 
 Selecione a formação desejada e clique em "Ver Resultado".
-Também está disponível em https://titesimulator2.netlify.app/
+Também está disponível em https://titesimulator-pd.netlify.app/
 
 
